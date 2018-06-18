@@ -304,6 +304,17 @@ liip_theme:
     device_detection: my_devcice_detection
 ````
 
+### Fallback redirect
+
+Per default the bundle redirects to the referer URL after theme switching. When there is no referer the bundle redirects to "/" as fallback. It is possible to configure a route to use as a redirect fallback instead of "/". This is useful if your Symfony installation is running in a subfolder of your webroot or if you do not want to redirect to the homepage after theme switching. **Attention:** redirecting to a route is only possible when there is no referer set by the browser.
+
+```yaml
+# app/config/config.yml
+liip_theme:
+    # ...
+    redirect_fallback: any_route
+```
+
 ## Contribution
 
 Active contribution and patches are very welcome. To keep things in shape we
